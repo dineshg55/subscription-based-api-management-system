@@ -1,0 +1,21 @@
+package com.apiplatform.entity;
+
+import java.util.List;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Plan {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String planName;
+	private Integer monthlyLimit;
+}
