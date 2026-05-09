@@ -1,6 +1,8 @@
 package com.apiplatform.service;
 
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -81,7 +83,7 @@ public class AuthService {
 	
 	public ResponseEntity<ResponseStructure<AuthResponse>> login(LoginRequest request){
 		
-		Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
 				request.getUserName(), 
 				request.getPassword()
 				));
